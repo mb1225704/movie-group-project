@@ -29,6 +29,7 @@ body {
 
 .content-section {
   margin: 1rem 3rem;
+  max-width: 1200px;
 }
 
 .movie-card {
@@ -37,7 +38,7 @@ body {
 
   img {
     max-width: 66%;
-    height: auto;
+    max-height: 25rem;
   }
 
   p {
