@@ -1,0 +1,29 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light-gray;
+  color: $dark-sienna;
+}
+
+.top-bar {
+  background-color: $feldgrau;
+  padding: 1rem 3rem;
+
+
+  a {
+    color: $light-gray;
+  }
+
+  li {
+    list-style: none;
+    background-color: $feldgrau;
+  }
+}
+
+.content-section {
+  margin: 1rem 3rem;
+  max-width: 1200px;
+}
