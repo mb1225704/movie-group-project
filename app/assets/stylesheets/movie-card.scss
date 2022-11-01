@@ -1,0 +1,42 @@
+@import 'colors';
+
+.movie-card {
+  background-color: $dark-sienna;
+  border-radius: .5rem;
+
+  img {
+    max-width: 66%;
+    max-height: 25rem;
+  }
+
+  p {
+    color: $light-gray
+  }
+
+  .card-content {
+    margin-top: 2rem;
+  }
+
+  .label {
+    background-color: $middle-blue-green;
+    color: $dark-sienna;
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    max-width: 7rem;
+    display: block;
+  }
+
+  .rating {
+    background-color: $dark-sky-blue;
+  }
+}
+
+
+.movie-meta-info {
+  padding: 1rem;
+
+  p {
+    margin: 1rem;
+  }
+}
