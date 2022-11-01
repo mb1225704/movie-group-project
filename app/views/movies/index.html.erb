@@ -1,12 +1,15 @@
-<h1>Movie Index Page</h1>
+<h2>Movie Index Page</h2>
 
-<% @movies.each do |movie|%>
-<div>
-    <img src="<%= movie.poster_image_url%>">
-    <p><%= "#{movie.title}(#{movie.release_date})" %></p>
-    <p><%= movie.genre%></p>
-    <p><%= movie.score%></p>
-    <p><%= movie.rating%></p>
+<div class="grid-x grid-margin-x">
+  <% @movies.each do |movie|%>
+    <div class= "cell text-center large-4 small-12 callout movie-card">
+        <img class="card-image" src="<%= movie.poster_image_url%>">
+        <div class="card-content">
+          <p><%= "#{movie.title} (#{movie.release_date})" %></p>
+          <p><%="Quality Score: #{movie.score}/10"%></p>
+          <p class="label"><%=movie.genre%></p>
+          <p class="label rating"><%= "Rated #{movie.rating}"%></p>
+        </div>
+    </div>
+  <%end%>
 </div>
-
-<%end%>
