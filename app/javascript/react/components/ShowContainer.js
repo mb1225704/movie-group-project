@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 
 const ShowContainer = (props) => {
     const [movie, setMovie] = useState({})
@@ -37,9 +37,7 @@ const ShowContainer = (props) => {
                 </div>
             </div>
         </div>
-
     )
-
 }
 
 export default ShowContainer
