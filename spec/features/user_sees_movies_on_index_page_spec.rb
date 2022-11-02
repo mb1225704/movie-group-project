@@ -10,7 +10,7 @@ feature "User sees movies on index page" do
     
     visit root_path
 
-    expect(page).to have_content("#{movie_1.title}(#{movie_1.release_date})")
+    expect(page).to have_content("#{movie_1.title} (#{movie_1.release_date})")
     expect(page).to have_content(movie_1.genre)
 
     expect(page).to have_content(movie_2.score)
@@ -22,7 +22,7 @@ feature "User sees movies on index page" do
 
     visit movies_path
 
-    expect(page).to have_content("#{movie_1.title}(#{movie_1.release_date})")
+    expect(page).to have_content("#{movie_1.title} (#{movie_1.release_date})")
     expect(page).to have_content(movie_1.genre)
 
     expect(page).to have_content(movie_2.score)
