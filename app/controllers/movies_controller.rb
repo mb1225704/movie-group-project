@@ -6,9 +6,6 @@ class MoviesController < ApplicationController
     elsif !user_signed_in?
       @movies = Movie.where(rating: "PG")
       @user_display = "Stranger"
-
     end
-
   end
-
 end
