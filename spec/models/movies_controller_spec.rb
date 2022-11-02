@@ -18,7 +18,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
         rating:"R", 
         runtime:"151 Minutes",
         language: "English", 
-        description:"An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
+        description:"An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston"
     )}
     
     describe "GET#show" do
@@ -51,7 +51,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
             expect(response.content_type).to eq "application/json"
 
             expect(movie_info["language"]).to eq movie_2.language
-            expect(movie_info["description"]).to eq movie_2.description
+            expect(movie_info["description"]).to eq movie_2.description 
         end
     end 
 end
