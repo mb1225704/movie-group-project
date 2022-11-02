@@ -8,6 +8,8 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.integer :score, null: false
       t.string :rating, null: false
       t.string :language
+      t.string :runtime, null: false
+      t.text :description
       t.timestamps
     end
   end

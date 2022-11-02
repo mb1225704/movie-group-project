@@ -1,0 +1,24 @@
+@import './colors.scss';
+
+.show-body{
+    margin: 2rem 0;
+
+    img{
+        margin:0;
+    }
+}
+
+.label {
+    background-color: $middle-blue-green;
+    color: $dark-sienna;
+    font-size: 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    max-width: 7rem;
+    display: block;
+    text-align: center;
+  }
+
+  .rating {
+    background-color: $dark-sky-blue;
+  }
