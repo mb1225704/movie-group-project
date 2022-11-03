@@ -4,6 +4,8 @@
   background-color: $dark-sienna;
   border-radius: .5rem;
 
+  transition: .2s;
+
   img {
     max-width: 66%;
     max-height: 25rem;
@@ -30,6 +32,11 @@
   .rating {
     background-color: $dark-sky-blue;
   }
+}
+
+.movie-card:hover {
+  opacity: 80%;
+  cursor: pointer;
 }
 
 
