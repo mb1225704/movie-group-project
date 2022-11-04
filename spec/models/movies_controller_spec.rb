@@ -21,6 +21,30 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
         description:"An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston"
     )}
     
+    let!(:user_1){ User.create(
+      first_name: "test", 
+      last_name: "user", 
+      username: "tester", 
+      email: "test@test.com", 
+      password: "testtest"
+    )}
+
+    let!(:review_1){ Review.create(
+      score: 10, 
+      title: "AMAZING", 
+      body: "This movie is one of the greatest movies I have ever seen in my entire life", 
+      user: user_1 , 
+      movie: movie_2 
+    )}
+
+    let!(:review_2){ Review.create(
+      score: 8, 
+      title: "Not bad", 
+      user: user_1, 
+      movie: movie_2 
+    )}
+
+    
     describe "GET#show" do
         it "should return the movie with the matching ID" do
             get :show, params: { id: movie_1.id }
@@ -51,7 +75,26 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
             expect(response.content_type).to eq "application/json"
 
             expect(movie_info["language"]).to eq movie_2.language
-            expect(movie_info["description"]).to eq movie_2.description 
+            expect(movie_info["description"]).to eq movie_2.description
+            
+
+        end
+
+        it "will return a list of reviews associated to that movie" do
+          get :show, params: { id: movie_2.id }
+
+          returned_json = JSON.parse(response.body)
+          movie_info = returned_json["movie"]
+
+          expect(response.status).to eq 200
+          expect(response.content_type).to eq "application/json"
+
+          expect(movie_info["reviews"].length).to eq 2
+          expect(movie_info["reviews"][0]["id"]).to eq review_1.id
+          expect(movie_info["reviews"][0]["score"]).to eq review_1.score
+          expect(movie_info["reviews"][0]["title"]).to eq review_1.title
+          expect(movie_info["reviews"][0]["body"]).to eq review_1.body
+          expect(movie_info["reviews"][0]["user"]["id"]).to eq user_1.id
         end
     end 
 end
