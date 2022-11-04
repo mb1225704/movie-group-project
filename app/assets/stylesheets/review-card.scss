@@ -1,0 +1,17 @@
+@import 'colors';
+
+.review-card {
+  margin: 2rem 0;
+  padding: 1.5rem 3rem;
+  border-radius: .5rem;
+  background-color: $dark-sienna;
+
+  p,
+  h3 {
+    color: $light-gray;
+  }
+
+  .review-body {
+    margin: 1rem 0 2rem 0;
+  }
+}
