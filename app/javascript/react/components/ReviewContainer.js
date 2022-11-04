@@ -13,21 +13,16 @@ const ReviewContainer = ({ reviews }) => {
         username={review.user.username}
       />
     )
-
   })
 
   return (
-
     <Fragment>
       <h2 className="large-offset-2"> Reviews </h2>
       <div className="grid-x grid-margin-x review-list">
         {reviewList}
       </div>
     </Fragment>
-
   )
-
-
 }
 
 export default ReviewContainer
