@@ -27,4 +27,12 @@ feature "User sees movies on index page" do
     expect(page).to have_content(movie_2.score)
     expect(page).to have_content(movie_2.rating)
   end
+
+  scenario 'user clicks on movie card' do
+    visit movies_path 
+
+    click_on(movie_1.title)
+
+    expect(page).to have_current_path("/movies/#{movie_1.id}")
+  end
 end
