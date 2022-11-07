@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import ReviewContainer from "./ReviewContainer"
 
 const ShowContainer = (props) => {
-  const [movie, setMovie] = useState({})
+  const [movie, setMovie] = useState({ current_user: "" })
   const [reviews, setReviews] = useState([])
 
   const fetchMovie = async () => {
@@ -15,6 +15,7 @@ const ShowContainer = (props) => {
       } else {
         const parsedMovie = await response.json()
         setMovie(parsedMovie.movie)
+        // debugger
         setReviews(parsedMovie.movie.reviews)
       }
 
@@ -36,9 +37,10 @@ const ShowContainer = (props) => {
     movieSynopsis = "There is not yet a synopsis for this movie. Check back later!"
   }
 
+
   return (
     <div>
-      <h2 className="large-offset-3">{`${movie.title} (${movie.release_date})`} <span className="label">{movie.rating}</span></h2>
+      <h2 className="large-offset-3">{`${movie.title}(${movie.release_date})`} <span className="label">{movie.rating}</span></h2>
       <div className="show-body grid-x grid-margin-x">
         <img className="large-offset-3 large-4 small-12" src={movie.poster_image_url} alt={`${movie.title} poster image`} />
         <div className="show-information cell large-5 small-12">
@@ -52,6 +54,7 @@ const ShowContainer = (props) => {
       </div>
       <ReviewContainer
         reviews={reviews}
+        setReviews={setReviews}
       />
     </div>
   )

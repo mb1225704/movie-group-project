@@ -15,9 +15,17 @@ const ReviewContainer = ({ reviews }) => {
     )
   })
 
+  const onClick = () => {
+    console.log('hello')
+  }
+
+
   return (
     <Fragment>
-      <h2 className="large-offset-2"> Reviews </h2>
+      <div>
+        <h2 className="large-offset-2"> Reviews </h2>
+        <button className="button" onClick={onClick}>Add a Review</button>
+      </div>
       <div className="grid-x grid-margin-x review-list">
         {reviewList}
       </div>
