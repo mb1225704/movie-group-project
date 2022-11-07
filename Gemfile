@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -54,3 +54,7 @@ gem 'devise'
 gem 'foundation-rails', '~> 6.5'
 gem 'webpacker', '~> 3.3'
 gem "active_model_serializers"
+gem "carrierwave"
+gem "fog-aws"
+gem "figaro"
+gem "carrierwave-aws"

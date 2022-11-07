@@ -2,8 +2,8 @@
 
 
 
-<div>
-    <img src="<%= @user.profile_image_url%>">
+<div class="image-card">
+    <img src=<%="#{@user.profile_photo}"%>>
     <p>First Name: <%= @user.first_name %></p>
     <p>Last Name: <%= @user.last_name %></p>
     <p>Email: <%= @user.email %></p>
