@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
-
-import AuthenticatedRoute from './authentication/AuthenticatedRoute'
 import NewReviewForm from './NewReviewForm'
 import ShowContainer from './ShowContainer'
 
@@ -36,7 +34,6 @@ const App = (props) => {
         <Route exact path="/movies/:id/reviews/new" >
           <NewReviewForm user={currentUser} />
         </Route>
-
       </Switch>
     </BrowserRouter>
   )

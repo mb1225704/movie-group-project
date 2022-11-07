@@ -5,8 +5,9 @@ class Api::V1::ReviewsController < ApiController
       title: params["title"],
       body: params["body"],
       user: current_user,
-      movie: Movie.find(params["review"]["movie_id"]["id"])
+      movie: Movie.find(params["movie_id"]["id"])
     )
+    
     if review.save
       render json: review
     else 
