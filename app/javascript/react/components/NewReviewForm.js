@@ -57,7 +57,6 @@ const NewReviewForm = (props) => {
     return _.isEmpty(submitErrors)
   }
 
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (validSubmission()) {

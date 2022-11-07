@@ -15,10 +15,8 @@ const ShowContainer = (props) => {
       } else {
         const parsedMovie = await response.json()
         setMovie(parsedMovie.movie)
-        // debugger
         setReviews(parsedMovie.movie.reviews)
       }
-
 
     } catch (err) {
       console.log(`Error! - ${err}`)
@@ -36,7 +34,6 @@ const ShowContainer = (props) => {
   } else {
     movieSynopsis = "There is not yet a synopsis for this movie. Check back later!"
   }
-
 
   return (
     <div>
