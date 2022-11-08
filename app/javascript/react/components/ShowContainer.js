@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ReviewContainer from "./ReviewContainer"
+import { withRouter } from "react-router-dom"
 
 const ShowContainer = (props) => {
   const [movie, setMovie] = useState({ current_user: {} })
@@ -52,9 +53,10 @@ const ShowContainer = (props) => {
       <ReviewContainer
         reviews={reviews}
         setReviews={setReviews}
+        user={props.user}
       />
     </div>
   )
 }
 
-export default ShowContainer
+export default withRouter(ShowContainer)
