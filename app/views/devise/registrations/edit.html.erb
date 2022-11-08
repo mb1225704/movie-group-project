@@ -28,6 +28,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :profile_photo %><br />
+    <%= f.file_field :profile_photo , autofocus: true, autocomplete: "profile_photo" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>

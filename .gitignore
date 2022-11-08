@@ -28,3 +28,8 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore environment variables
+.env
+# Ignore application configuration
+/config/application.yml
