@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::UsersController, type: :controller do
+RSpec.describe Api::V1::CurrentUserController, type: :controller do
   let!(:user_1){ User.create(
     first_name: "test", 
     last_name: "user", 

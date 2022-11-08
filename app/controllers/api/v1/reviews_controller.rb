@@ -1,17 +1,18 @@
 class Api::V1::ReviewsController < ApiController 
   def create
-    review = Review.new(
-      score: params["score"],
-      title: params["title"],
-      body: params["body"],
-      user: current_user,
-      movie: Movie.find(params["movie_id"]["id"])
-    )
-    
+    review = Review.new(review_params)
+    review[:movie_id] = params["movie_id"]
+    review[:user_id] = current_user.id
     if review.save
       render json: review
     else 
-      render json: {errors: review.errors.full_messages}, status: :bad_request
+      render json: {errors: review.errors.full_messages}, status: 401
     end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:score, :title, :body)
   end
 end

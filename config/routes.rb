@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :movies, only: [:show]
-      resources :reviews, only: [:create]
-      resources :users, only: [:index]
+      resources :movies, only: [:show] do
+        resources :reviews, only: [:create]
+      end
+      get'/current-user', to: "current_user#index"
     end
   end
 end

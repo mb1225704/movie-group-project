@@ -27,7 +27,6 @@ const NewReviewForm = (props) => {
     score: "",
     title: "",
     body: "",
-    movie_id: props.match.params
   })
 
   const handleUpdate = (event) => {
@@ -66,7 +65,7 @@ const NewReviewForm = (props) => {
 
   const postUpdate = async (formPayload) => {
     try {
-      const response = await fetch(`/api/v1/reviews`, {
+      const response = await fetch(`/api/v1/movies/${props.match.params.id}/reviews`, {
         credentials: "same-origin",
         method: "POST",
         body: JSON.stringify(formPayload),
@@ -112,6 +111,5 @@ const NewReviewForm = (props) => {
     </div>
   )
 }
-
 
 export default withRouter(NewReviewForm)

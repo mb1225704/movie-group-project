@@ -18,14 +18,16 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     password: "testtest"
   )}
     
-  describe "GET#create" do
+  describe "POST#create" do
     scenario "user submits valid information" do
       sign_in user_1
-
+      
       get :create, params: {
-        score: 8, 
-        title: "Not bad more char", 
-        movie_id: {"id": movie_1.id}
+        review: {
+          score: 8, 
+          title: "Not bad more char", 
+        },
+        movie_id: movie_1.id
       }
 
       returned_json = JSON.parse(response.body)
@@ -47,10 +49,13 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       sign_in user_1
 
       get :create, params: {
-        movie_id: {"id": movie_1.id}
+        review: {
+          title: "something"
+        },
+        movie_id: movie_1.id
       }
 
-      expect(response.status).to eq 400 
+      expect(response.status).to eq 401 
     end
   end 
 end

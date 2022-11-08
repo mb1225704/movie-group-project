@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import ReviewContainer from "./ReviewContainer"
 
 const ShowContainer = (props) => {
-  const [movie, setMovie] = useState({ current_user: "" })
+  const [movie, setMovie] = useState({ current_user: {} })
   const [reviews, setReviews] = useState([])
 
   const fetchMovie = async () => {
