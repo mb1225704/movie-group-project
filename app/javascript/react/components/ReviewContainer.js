@@ -1,9 +1,10 @@
 import React, { Fragment } from "react"
 import Review from "./Review"
+import { Link, withRouter } from "react-router-dom"
 
-const ReviewContainer = ({ reviews }) => {
+const ReviewContainer = (props) => {
 
-  const reviewList = reviews.map((review) => {
+  const reviewList = props.reviews.map((review) => {
     return (
       <Review
         key={review.id}
@@ -17,7 +18,10 @@ const ReviewContainer = ({ reviews }) => {
 
   return (
     <Fragment>
-      <h2 className="large-offset-2"> Reviews </h2>
+      <div className="grid-x review-header">
+        <h2 className="large-offset-2"> Reviews </h2>
+        <Link className="button" to={`/movies/${props.match.params.id}/reviews/new`}>Add a Review</Link>
+      </div>
       <div className="grid-x grid-margin-x review-list">
         {reviewList}
       </div>
@@ -25,4 +29,4 @@ const ReviewContainer = ({ reviews }) => {
   )
 }
 
-export default ReviewContainer
+export default withRouter(ReviewContainer)
