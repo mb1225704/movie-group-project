@@ -16,11 +16,16 @@ const ReviewContainer = (props) => {
     )
   })
 
+  let buttonMessage = "Sign in to add a Review"
+  if (props.user) {
+    buttonMessage = "Add a Review"
+  }
+
   return (
     <Fragment>
       <div className="grid-x review-header">
         <h2 className="large-offset-2"> Reviews </h2>
-        <Link className="button" to={`/movies/${props.match.params.id}/reviews/new`}>Add a Review</Link>
+        <Link className="button" to={`/movies/${props.match.params.id}/reviews/new`}>{buttonMessage}</Link>
       </div>
       <div className="grid-x grid-margin-x review-list">
         {reviewList}
