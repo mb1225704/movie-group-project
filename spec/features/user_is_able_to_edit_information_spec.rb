@@ -8,21 +8,19 @@ feature "user visits sign in page" do
 
     visit new_user_registration_path
 
-      fill_in 'Email', with: user_1.email 
-      fill_in 'First name', with: user_1.first_name 
-      fill_in 'Last name', with: user_1.last_name 
-      fill_in 'Username', with: user_1.username 
-      fill_in 'Password', with: user_1.password
-      fill_in 'Password confirmation', with: user_1.password
-      attach_file 'user[profile_photo]', "#{Rails.root}/spec/support/images/David-Delahunty-Graphic-Design-Make-something-cool-everyday-11-594x821.jpeg"
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'First name', with: "#{user_1.first_name}" 
+      fill_in 'Last name', with: "#{user_1.last_name}" 
+      fill_in 'Username', with: "#{user_1.username}" 
+      fill_in 'Password', with: "#{user_1.encrypted_password}" 
+      fill_in 'Password confirmation', with: "#{user_1.encrypted_password}" 
 
       click_button 'Sign up'
       click_on 'Profile'
-      click_on "Edit Information"
+      click_on "Edit Profile Information"
 
       fill_in 'First name', with: "Jeff"
-      attach_file 'user[profile_photo]', "#{Rails.root}/spec/support/images/jqec58ch3dk21.webp"
-      fill_in 'Current password', with: 'password'
+      fill_in 'Current password', with: "#{user_1.encrypted_password}"
  
       click_on 'Update'
 
