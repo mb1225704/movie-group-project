@@ -42,7 +42,7 @@ const ShowContainer = (props) => {
       <div className="show-body grid-x grid-margin-x">
         <img className="large-offset-3 large-4 small-12" src={movie.poster_image_url} alt={`${movie.title} poster image`} />
         <div className="show-information cell large-5 small-12">
-          <p>Quality Score: {movie.score}/10</p>
+          <p>Quality Score: {movie.avg_score}/10</p>
           <p>Runtime: {movie.runtime}</p>
           <p>Genre(s): {movie.genre}</p>
           <p>Language: {movie.language}</p>

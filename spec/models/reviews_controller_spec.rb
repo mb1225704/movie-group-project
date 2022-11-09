@@ -6,7 +6,6 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       genre: "action", 
       release_date: "1977", 
       poster_image_url:"https://m.media-amazon.com/images/I/81P3lDJbjCL.jpg", 
-      score: 10, 
       rating: "PG",  
       runtime: "205 Minutes")}
   
