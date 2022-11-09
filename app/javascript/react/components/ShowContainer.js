@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ReviewContainer from "./ReviewContainer"
+import Vote from "./VotesContainer"
 
 const ShowContainer = (props) => {
   const [movie, setMovie] = useState({ current_user: "" })
@@ -15,7 +16,6 @@ const ShowContainer = (props) => {
       } else {
         const parsedMovie = await response.json()
         setMovie(parsedMovie.movie)
-        // debugger
         setReviews(parsedMovie.movie.reviews)
       }
 
@@ -36,8 +36,7 @@ const ShowContainer = (props) => {
   } else {
     movieSynopsis = "There is not yet a synopsis for this movie. Check back later!"
   }
-
-
+  debugger
   return (
     <div>
       <h2 className="large-offset-3">{`${movie.title}(${movie.release_date})`} <span className="label">{movie.rating}</span></h2>

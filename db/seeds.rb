@@ -10,5 +10,8 @@ movie_2 = Movie.create(title:"The Departed", genre:"Thriller", release_date:"200
 
 user_1 = User.create(first_name: "test", last_name: "user", username: "tester", email: "test@test.com", password: "testtest")
 
-review_1 = Review.create(score: 10, title: "AMAZING" , body: "This movie is one of the greatest movies I have ever seen in my entire life", user: user_1 , movie: movie_1 )
+review_1 = Review.create(score: 10, title: "AMAZING" , body: "This movie is one of the greatest movies I have ever seen in my entire life", user: user_1 , movie: movie_1)
 review_2 = Review.create(score: 8, title: "Not bad", user: user_1 , movie: movie_1 )
+
+vote_1 = Vote.create(review: review_1, user: user_1, vote_value: 1)
+

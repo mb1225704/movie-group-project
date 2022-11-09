@@ -32,7 +32,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/movies/:id" component={ShowContainer} />
+        <Route exact path="/movies/:id" component={ShowContainer} user={currentUser}/>
         <Route exact path="/movies/:id/reviews/new" >
           <NewReviewForm user={currentUser} />
         </Route>

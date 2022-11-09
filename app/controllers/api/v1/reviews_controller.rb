@@ -4,6 +4,8 @@ class Api::V1::ReviewsController < ApiController
       score: params["score"],
       title: params["title"],
       body: params["body"],
+      upvotes: params["upvotes"],
+      downvotes: params["downvotes"]
       user: current_user,
       movie: Movie.find(params["review"]["movie_id"]["id"])
     )

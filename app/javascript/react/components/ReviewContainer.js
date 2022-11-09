@@ -2,15 +2,19 @@ import React, { Fragment } from "react"
 import Review from "./Review"
 
 const ReviewContainer = ({ reviews }) => {
-
   const reviewList = reviews.map((review) => {
     return (
       <Review
         key={review.id}
+        id={review.id}
         score={review.score}
         title={review.title}
         body={review.body}
         username={review.user.username}
+        // upvoteScore={upvoteScore}
+        // setUpvoteScore={setUpvoteScore}
+        // downVoteScore={upvoteScore}
+        // setDownvoteScore={setDownvoteScore}
       />
     )
   })
