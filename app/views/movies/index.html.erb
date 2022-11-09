@@ -8,7 +8,7 @@
         <img class="card-image" src="<%= movie.poster_image_url%>"/>
         <div class="card-content">
           <p><%= "#{movie.title} (#{movie.release_date})" %></p>
-          <p><%="Quality Score: #{movie.score}/10"%></p>
+          <p><%="Quality Score: #{movie.avg_score}/10"%></p>
           <p class="label"><%=movie.genre%></p>
           <p class="label rating"><%= "Rated #{movie.rating}"%></p>
         </div>

@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_11_04_190302) do
     t.string "genre", null: false
     t.string "release_date", null: false
     t.string "poster_image_url", null: false
-    t.integer "score", null: false
     t.string "rating", null: false
     t.string "language"
     t.string "runtime", null: false
