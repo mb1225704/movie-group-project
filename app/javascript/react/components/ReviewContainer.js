@@ -26,7 +26,7 @@ const ReviewContainer = (props) => {
   }
 
   return (
-    <div className="large-offset-3">
+    <div className="small-offset-1 large-offset-3">
       <div className="grid-x review-header">
         <h2> Reviews </h2>
         <Link className="button" to={`/movies/${props.match.params.id}/reviews/new`}>{buttonMessage}</Link>
