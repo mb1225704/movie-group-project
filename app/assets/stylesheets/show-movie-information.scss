@@ -1,26 +1,26 @@
 @import './colors.scss';
 
-.show-body{
-    margin: 2rem 0;
-    padding-left: 1rem;
-    
-    img {
-        margin:0;
-    }
+.show-body {
+  margin: 2rem 0;
+  padding-left: 1rem;
+
+  img {
+    margin: 0;
+  }
 }
 
 .label {
-    background-color: $middle-blue-green;
-    color: $dark-sienna;
-    font-size: 1rem;
-    padding: .5rem;
-    border-radius: 1rem;
-    max-width: 7rem;
-    display: inline;
-    text-align: center;
-    vertical-align: 50%;
-  }
+  background-color: $middle-blue-green;
+  color: $dark-sienna;
+  font-size: 1rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  max-width: 7rem;
+  display: inline;
+  text-align: center;
+  vertical-align: 50%;
+}
 
-  .rating {
-    background-color: $dark-sky-blue;
-  }
+.rating {
+  background-color: $dark-sky-blue;
+}
