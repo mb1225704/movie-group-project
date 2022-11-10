@@ -5,12 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-movie_1 = Movie.create(title: "Star Wars: A New Hope", genre: "Action", release_date: "1977", poster_image_url:"https://m.media-amazon.com/images/I/81P3lDJbjCL.jpg", rating: "PG", language: "English", runtime: "205 Minutes")
-movie_2 = Movie.create(title:"The Departed", genre:"Thriller", release_date:"2006", poster_image_url:"https://m.media-amazon.com/images/I/510gCMld+uL._AC_.jpg", rating:"R", runtime:"151 Minutes", description:"An undercover cop and a mole in the police rattempt to identify each other while infiltrating an Irish gang in South Boston.")
-movie_3 = Movie.create(title:"Alien", genre:"Thriller", release_date:"1979", poster_image_url:"https://images.photowall.com/products/59754/alien.jpg?h=699&q=85", rating:"R", runtime:"117 Minutes", description:"The crew of a commercial spacecraft encounter a deadly lifeform after investigating an unknown transmission.")
-movie_4 = Movie.create(title:"The Nice Guys", genre:"Mystery", release_date:"2016", poster_image_url:"https://m.media-amazon.com/images/I/51P81+7-6sL._AC_SY580_.jpg", rating:"R", runtime:"116 Minutes", description:"In 1970s Los Angeles, a mismatched pair of private eyes investigate a missing girl and the mysterious death of a film star.")
+require 'faraday'
+
+def generate_movie(query)
+  conn = Faraday.new(
+    url: "https://www.omdbapi.com/?apikey=#{ENV['OMDB_API_KEY']}&#{query}",
+    params: {param: '1'},
+    headers: {'Content-Type' => 'application/json'}
+  )
+
+  response = conn.get
+  json = JSON.parse(response.body)
+
+  Movie.create(title: json['Title'], genre: get_single_string(json["Genre"]) , release_date: json["Year"], poster_image_url: json["Poster"], rating: json["Rated"], language: get_single_string(json["Language"]), runtime: json['Runtime'])
+end
+
+def get_single_string(string)
+  array = string.split(",")
+  array.first
+end
+
+the_nice_guys = generate_movie("t=The+Nice+Guys&y=2016")
+the_departed = generate_movie("t=The+Departed&y=2006")
 
 user_1 = User.create(first_name: "test", last_name: "user", username: "tester", email: "test@test.com", password: "testtest")
 
-review_1 = Review.create(score: 10, title: "AMAZING" , body: "This movie is one of the greatest movies I have ever seen in my entire life", user: user_1 , movie: movie_1 )
-review_2 = Review.create(score: 8, title: "Not bad", user: user_1 , movie: movie_1 )
+review_1 = Review.create(score: 10, title: "AMAZING" , body: "This movie is one of the greatest movies I have ever seen in my entire life", user: user_1 , movie: Movie.first )
+review_2 = Review.create(score: 8, title: "Not bad", user: user_1 , movie: Movie.first )

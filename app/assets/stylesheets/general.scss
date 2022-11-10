@@ -4,10 +4,11 @@
   background-color: $feldgrau;
   color: $light-gray;
   border-radius: 3rem;
-  font-size: 1.75rem;
+  font-size: 1rem;
+  line-height: inherit;
   text-align: center;
   transition: .2s;
-  margin: 0;
+  margin: auto 2rem;
 }
 
 .button:hover,
@@ -16,20 +17,20 @@
   color: $middle-blue-green;
 }
 
-.link-margin{
+.link-margin {
   margin-left: .75rem;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.left-margin{
+.left-margin {
   margin-left: .75rem
 }
 
-.top-margin{
+.top-margin {
   margin-top: 1rem
 }
 
-.top-margin-large{
+.top-margin-large {
   margin-top: 2rem
 }
