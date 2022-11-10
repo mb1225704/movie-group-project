@@ -1,11 +1,11 @@
-<h1>Hello <%= @user.username %>!</h1>
+<h1 class="link-margin">Hello <%= @user.username %>!</h1>
 
 <div class="grid-x grid-margin-x">
     <div class="image-card">
         <img src="<%= @user.profile_photo_url%>">
     </div>
 
-    <div class="text-center">
+    <div class="text-left left-margin">
         <p>First Name: <%= @user.first_name %></p>
         <p>Last Name: <%= @user.last_name %></p>
         <p>Email: <%= @user.email %></p>
