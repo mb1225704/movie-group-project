@@ -4,13 +4,32 @@
   background-color: $feldgrau;
   color: $light-gray;
   border-radius: 3rem;
-  font-size: 1rem;
+  font-size: 1.75rem;
+  text-align: center;
   transition: .2s;
-
+  margin: 0;
 }
 
 .button:hover,
 .button:focus {
   background-color: $dark-sienna;
   color: $middle-blue-green;
+}
+
+.link-margin{
+  margin-left: .75rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.left-margin{
+  margin-left: .75rem
+}
+
+.top-margin{
+  margin-top: 1rem
+}
+
+.top-margin-large{
+  margin-top: 2rem
 }

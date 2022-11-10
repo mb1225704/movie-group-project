@@ -15,9 +15,13 @@ body {
   color: $dark-sienna;
 }
 
+.left-margin {
+  margin-left: .75rem;
+}
+
 .top-bar {
   background-color: $feldgrau;
-  padding: 1rem 3rem;
+  padding: 1rem 0m;
 
   a {
     color: $light-gray;

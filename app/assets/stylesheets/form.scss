@@ -6,19 +6,7 @@
     border-radius: .5rem;
     background-color: $dark-sienna;
 
-    h2 {
-        color: $light-gray;
-    }
-
-    h3 {
-        color: $light-gray;
-    }
-
-    li {
-        color: $light-gray;
-    }
-
-    label {
+    * {
         color: $light-gray;
     }
 }

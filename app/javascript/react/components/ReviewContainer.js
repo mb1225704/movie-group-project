@@ -22,14 +22,14 @@ const ReviewContainer = (props) => {
   }
 
   if (reviewList.length == 0) {
-    reviewList = <h3>No reviews yet!</h3>
+    reviewList = <h3 class="link-margin">No reviews yet!</h3>
   }
 
   return (
     <div className="large-offset-3">
       <div className="grid-x review-header">
-        <h2> Reviews </h2>
-        <Link className="button" to={`/movies/${props.match.params.id}/reviews/new`}>{buttonMessage}</Link>
+        <h2 class="link-margin"> Reviews </h2>
+        <Link className="center-text button" to={`/movies/${props.match.params.id}/reviews/new`}>{buttonMessage}</Link>
       </div>
       <div className="grid-x review-list">
         {reviewList}

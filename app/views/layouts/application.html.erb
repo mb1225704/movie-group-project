@@ -17,11 +17,11 @@
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to 'Profile', user_path(current_user) %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"link-margin" %></li>
+          <li><%= link_to 'Profile', user_path(current_user), class:"link-margin" %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path, class:"link-margin" %></li>
+          <li><%= link_to 'Sign In', new_user_session_path, class:"link-margin" %></li>
         <%- end -%>
       </ul>
     </section>
