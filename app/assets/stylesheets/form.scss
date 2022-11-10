@@ -1,0 +1,28 @@
+@import 'colors';
+@import 'general';
+.form-card {
+    margin: 2rem 0;
+    padding: 1.5rem 3rem;
+    border-radius: .5rem;
+    background-color: $dark-sienna;
+
+    h2 {
+        color: $light-gray;
+    }
+
+    h3 {
+        color: $light-gray;
+    }
+
+    li {
+        color: $light-gray;
+    }
+
+    label {
+        color: $light-gray;
+    }
+}
+
+
+
+

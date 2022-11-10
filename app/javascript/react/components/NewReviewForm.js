@@ -91,7 +91,7 @@ const NewReviewForm = (props) => {
   }
 
   return (
-    <div>
+    <div className="form-card">
       <ErrorList errors={errors} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="score">Quality Score</label>
@@ -106,7 +106,7 @@ const NewReviewForm = (props) => {
         <label htmlFor="body">Review</label>
         <input id="body" name="body" type="textarea" value={review.email} onChange={handleUpdate} />
 
-        <input type="submit" value="Add Review" />
+        <input type="submit" value="Add Review" className="button"/>
       </form>
     </div>
   )
