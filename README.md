@@ -7,6 +7,20 @@ Welcome to Dope movie reviews! Reviewers get to decide how dope movies are. You 
 - We built this website using react and rails. As a general rule, pages should be built in react unless there is a good reason not to. Although there are several rails pages, the direction of this app is moving heavily toward react
 - All endpoints are serialized and should continue to be unless there is a good reason not to
 
+### Database seeding
+We are connecting to an API called the OMDB API - https://www.omdbapi.com/
+
+If you wish to get this API on your local machine, you will need to create an API key and assign it to the correct env variable.
+
+This API is free but only allows you to make a request to 1 movie at a time. This means that we still cannot dynamically display data. Rather, if there is a movie you want to add to the database, you can plug use the function within the seed file to load it. Beware of creating duplicates when reseeding!
+
+To load movies
+- Add the use the format within the seed file as a guide. 
+- Visit https://www.omdbapi.com/ where you can search for a movie and generate the query
+- Call on the generate_movie method in the seed file
+- BEFORE PROCEEDING, BEWARE OF DUPLICATES (again)
+- run `$ rake db:seed`
+
 ### Features to consider moving forward
 - Refactor to move most/all features to react
 - Build search bar on the homepage
