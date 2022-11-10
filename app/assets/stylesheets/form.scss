@@ -1,16 +1,18 @@
 @import 'colors';
 @import 'general';
+
 .form-card {
-    margin: 2rem 0;
-    padding: 1.5rem 3rem;
-    border-radius: .5rem;
-    background-color: $dark-sienna;
+  margin: 2rem 0;
+  padding: 1.5rem 3rem;
+  border-radius: .5rem;
+  background-color: $dark-sienna;
 
-    * {
-        color: $light-gray;
-    }
+  * {
+    color: $light-gray;
+  }
+
+  input,
+  textarea {
+    color: $dark-sienna;
+  }
 }
-
-
-
-
