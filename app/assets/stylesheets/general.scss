@@ -9,7 +9,8 @@
 
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   background-color: $dark-sienna;
   color: $middle-blue-green;
 }

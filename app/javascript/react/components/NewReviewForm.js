@@ -104,7 +104,7 @@ const NewReviewForm = (props) => {
         <input id="title" name="title" type="text" value={review.last_name} onChange={handleUpdate} />
 
         <label htmlFor="body">Review</label>
-        <input id="body" name="body" type="textarea" value={review.email} onChange={handleUpdate} />
+        <textarea id="body" name="body" type="textarea" value={review.email} onChange={handleUpdate} />
 
         <input type="submit" value="Add Review" className="button"/>
       </form>
