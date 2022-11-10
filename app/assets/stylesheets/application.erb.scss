@@ -1,8 +1,13 @@
 @import 'colors';
+$poppins: 'Poppins', sans-serif;
 
 * {
   box-sizing: border-box;
   color: $dark-sienna
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: $poppins;
 }
 
 body {
@@ -13,7 +18,6 @@ body {
 .top-bar {
   background-color: $feldgrau;
   padding: 1rem 3rem;
-
 
   a {
     color: $light-gray;
@@ -26,7 +30,11 @@ body {
 }
 
 .content-section {
-  margin: 1rem 3rem;
+  margin: 1.5em auto 0 auto;
   max-width: 1200px;
-}
 
+  .grid-margin-x {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

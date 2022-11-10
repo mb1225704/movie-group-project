@@ -38,11 +38,11 @@ const ShowContainer = (props) => {
 
   return (
     <div>
-      <h2 className="large-offset-3">{`${movie.title}(${movie.release_date})`} <span className="label">{movie.rating}</span></h2>
+      <h2 className="small-offset-1 large-offset-3">{`${movie.title}(${movie.release_date})`} <span className="label">{movie.rating}</span></h2>
       <div className="show-body grid-x grid-margin-x">
         <img className="large-offset-3 large-4 small-12" src={movie.poster_image_url} alt={`${movie.title} poster image`} />
-        <div className="show-information cell large-5 small-12">
-          <p>Quality Score: {movie.score}/10</p>
+        <div className="show-information cell large-4 small-12">
+          <p>Quality Score: {movie.avg_score}/10</p>
           <p>Runtime: {movie.runtime}</p>
           <p>Genre(s): {movie.genre}</p>
           <p>Language: {movie.language}</p>

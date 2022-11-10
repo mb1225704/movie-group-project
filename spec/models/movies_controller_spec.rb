@@ -6,7 +6,6 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
         genre: "action", 
         release_date: "1977", 
         poster_image_url:"https://m.media-amazon.com/images/I/81P3lDJbjCL.jpg", 
-        score: 10, 
         rating: "PG",  
         runtime: "205 Minutes")}
     let!(:movie_2) { Movie.create(
@@ -14,7 +13,6 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
         genre:"Thriller", 
         release_date:"2006", 
         poster_image_url:"https://m.media-amazon.com/images/I/510gCMld+uL._AC_.jpg", 
-        score:10, 
         rating:"R", 
         runtime:"151 Minutes",
         language: "English", 
@@ -60,7 +58,7 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
             expect(movie_info["genre"]).to eq movie_1.genre
             expect(movie_info["release_date"]).to eq movie_1.release_date
             expect(movie_info["poster_image_url"]).to eq movie_1.poster_image_url
-            expect(movie_info["score"]).to eq movie_1.score
+            expect(movie_info["avg_score"]).to eq movie_1.avg_score
             expect(movie_info["rating"]).to eq movie_1.rating
             expect(movie_info["runtime"]).to eq movie_1.runtime
         end
@@ -76,8 +74,6 @@ RSpec.describe Api::V1::MoviesController, type: :controller do
 
             expect(movie_info["language"]).to eq movie_2.language
             expect(movie_info["description"]).to eq movie_2.description
-            
-
         end
 
         it "will return a list of reviews associated to that movie" do
