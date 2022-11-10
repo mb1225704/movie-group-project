@@ -69,3 +69,14 @@ Form submits a post request to the database in the event that the form passes th
 The user fills out the form and, in the event that is passes the validation, is sent back to the movie show page. There is no review show page at the point of initial release
 
 React form validations will stop all invalid submissions
+
+## Credits
+### Core Project Team
+- @gieringj
+- @jHid04
+- @mb1225704
+- @jonpekk
+
+### Project Mentors/Villainous PR reviewers
+- @nwalberts
+- @dovakeen118
